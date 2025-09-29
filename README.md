@@ -1,2 +1,2 @@
-# Kalkylator-projekt
-En enkel kalkylator som körs i terminalen och kan hantera + och -
+# Dartprojekt
+Diverse projekt som skapats under kursen "Programmering i Dart".
