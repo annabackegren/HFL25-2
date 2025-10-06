@@ -1,0 +1,31 @@
+
+Lägg till hjälte – användaren skriver in namn, styrka (int), och kanske en specialkraft.
+ 2. Visa hjältar – skriv ut alla hjältar i listan. Sortera dem efter styrka (starkast först).
+ 3. Sök – låt användaren skriva in en bokstav eller ett namn och visa matchande hjältar.
+ 4. Avsluta – stäng programmet.
+
+⸻
+
+Krav:
+ • Använd List<Map för att lagra hjältarna.
+listexempel = [
+   { 
+      "name": "Batman", 
+      "powerstats": { 
+           "strength": "12"
+       } ,
+      "appearance": {
+          "gender": "Male",
+          "race": "Human"
+       } 
+      *"biography": {
+          "alignment": ""  
+       }
+    }
+];
+ • Använd sort för att ordna hjältarna efter styrka.
+ • Använd forEach för att skriva ut listan snyggt.
+ • Switch/case
+Tänk på att skapa återanvändbar kod med funktioner.
+
+Vi vill använda: List<Map<String, dynamic>> heroes = [ ]
