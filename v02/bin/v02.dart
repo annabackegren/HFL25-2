@@ -26,7 +26,7 @@ break;
 showHeroes();
 break;
   case 3:
-print("Val nr 3 för att söka hjälte");
+serachHeroes();
 break;
   case 4:
 print("Du har valt att avsluta, hejdå!");
@@ -37,6 +37,16 @@ menu();
 }
 
 menu();
+}
+
+// TEMPLATE FOR HERO LIST
+void printHero(Map<String, dynamic> hero){
+    print(
+    "Namn: ${hero['name']}\n"
+    "Styrka: ${hero['strength']}\n"
+    "Svaghet: ${hero['weakness']}\n"
+    "Fiende: ${hero['nemesis']}\n"
+    );
 }
 
 //ADD SUPERHERO TO LIST
@@ -111,17 +121,45 @@ void showHeroes(){
     print("");
     print("-----------------------------");
     print("");
-    print("Visa superhjältar sorterade på styrka (starkast först)");
+    print("Visar superhjältar sorterade på styrka (starkast först): ");
+    print("-----------------------------");
     print("");
 
   heroes.sort((a, b) => (b["strength"] as int).compareTo(a["strength"]));
 
 heroes.forEach((hero){
-  print(
-    "Namn: ${hero['name']}\n"
-    "Styrka: ${hero['strength']}\n"
-    "Svaghet: ${hero['weakness']}\n"
-    "Fiende: ${hero['nemesis']}\n"
-    );
+printHero(hero);
 });
+    print("");
+    print("-----------------------------");
+
+}
+
+// SEARCH FOR HEROES
+void serachHeroes(){
+    print("");
+    print("-----------------------------");
+    print("");
+    print("Sök bland de coola superhjältarna!");
+
+String? findHero;
+do{
+    print("");
+    stdout.write("Skriv in namnet (hela eller delar av det) på hjälten du vill hitta: ");
+    findHero = stdin.readLineSync();
+
+    if(findHero == null || findHero.isEmpty){
+      print("Alla hjältar har ett namn, kom igen!");
+    }
+}while(findHero == null || findHero.isEmpty);
+
+var heroSearch = heroes.where((hero) => (hero["name"] as String).contains(findHero!));
+    print("");
+    print("Sökresultat för '$findHero': ");
+    print("");
+
+for (var hero in heroSearch){
+printHero(hero);
+}
+menu();
 }
