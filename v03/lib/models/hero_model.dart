@@ -1,4 +1,4 @@
-import "package:v03/hero_subclasses.dart";
+import 'package:v03/models/hero_subclasses.dart';
 
 class HeroModel {
   final int id;
@@ -11,7 +11,6 @@ class HeroModel {
   final HeroImage image;
 
   HeroModel({
-    required this.id,
     required this.name,
     required this.powerstats,
     required this.biography,
@@ -19,5 +18,5 @@ class HeroModel {
     required this.work,
     required this.connections,
     required this.image,
-  });
+  }) : id = DateTime.now().millisecondsSinceEpoch;
 }
